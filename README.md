@@ -10,4 +10,4 @@ Este é um espaço para colaboração na obtenção de informações sobra a pan
 
 &nbsp;
 
-![](Logo_dthon3.jpg){width=30%}
+![](Logo_dthon3.jpg){width=10%}
