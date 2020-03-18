@@ -1,0 +1,62 @@
+---
+title: "1º Datathon remoto da UFRGS"
+subtitle: "Desafio de (obtenção e) análise de dados sobre o Covid-19"
+date: "18 March 2020"
+output:
+  pdf_document: default
+header-includes:
+    - \usepackage{fancyhdr}
+always_allow_html: yes
+
+---
+\addtolength{\headheight}{0.0cm} 
+\pagestyle{fancyplain} 
+\rhead{\includegraphics[height=1.5cm]{Logo_dthon3.jpg}}
+\lhead{\includegraphics[height=1.5cm]{LogoIME.png}}
+\chead{UNIVERSIDADE FEDERAL DO RIO GRANDE DO SUL \\
+INSTITUTO DE MATEMÁTICA E ESTATÍSTICA \\
+DEPARTAMENTO DE ESTATÍSTICA \\
+}
+\renewcommand{\headrulewidth}{0pt} 
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Desafios para a Estatística e ciências em geral (e Governos) no combate ao Covid-19
+
+Informações precisas e de acesso irrestrito à população são essenciais em situações de calamidade como nas pandemias. 
+Tomadas de decisão que vão desde orientações/restrições à população até medidas econômicas devem ser baseadas em critérios claros e objetivos...  
+
+
+## Qual o número de casos em sua área? Como calcular/estimar o número de pessoas infectadas em uma população?
+* Testar todos os indivíduos? Custos e viabilidade.
+* Como é feito em casos de pandemia? estimar a partir da taxa de mortalidade estimada?
+
+## Qual a taxa de mortalidade do Codiv-19
+* o denominador é justamente o número de infectados...
+* Os números de mortes são mais precisos, quanto? Existem informações omitidas? 
+
+## Impactos da política de contenção
+* Quais decisoes e em que momento devem ser tomadas? estágios da pandemia
+* Isolar a população? Por quanto tempo? Qual o tempo esperado de duração de uma pandemia?
+* O que ocorre no sistema de saúde se grande parte da ppulação busca serviços de saúde ao mesmo tempo?
+* Quais os impactos econômicos se a pandemia persiste por um longo período?
+
+
+## Dados no Brasil
+(https://www.editorasanar.com.br/blog/linha-do-tempo-do-coronavirus-no-brasil)
+
+Primeiro caso no Brasil  | Primeiro caso no RS
+-------------------------|----------------------
+26/02 caso importado     | 10/03 caso importado
+05/03 transmissao local  | XX/XX transmissao local
+
+## Mapas por região
+
+* Inglaterra
+https://www.theguardian.com/world/2020/mar/18/coronavirus-uk-cases-how-many-are-in-your-area
+
+* U.S.
+https://www.theguardian.com/world/ng-interactive/2020/mar/16/coronavirus-map-us-latest-cases-state-by-state
