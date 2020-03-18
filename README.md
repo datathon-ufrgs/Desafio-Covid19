@@ -6,6 +6,8 @@ Este é um espaço para colaboração na obtenção de informações sobra a pan
 
 ## Compartilhe suas informações aqui!!!
 
+### Mapa Global
+https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6
 
 
 &nbsp;
