@@ -11,7 +11,7 @@ always_allow_html: yes
 ---
 \addtolength{\headheight}{0.0cm} 
 \pagestyle{fancyplain} 
-\rhead{\includegraphics[height=1.5cm]{Logo_dthon3.jpg}}
+\rhead{\includegraphics[height=1.5cm]{LogoDthon.jpg}}
 \lhead{\includegraphics[height=1.5cm]{LogoIME.png}}
 \chead{UNIVERSIDADE FEDERAL DO RIO GRANDE DO SUL \\
 INSTITUTO DE MATEMÁTICA E ESTATÍSTICA \\
