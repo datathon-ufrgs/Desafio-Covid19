@@ -6,9 +6,26 @@ Este é um espaço para colaboração na obtenção de informações sobre a pan
 
 ## Compartilhe suas informações aqui!!!
 
-### Mapa Global
-https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6
 
+
+Referências:  
+
+
+### Mapa Global
+https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6  
+
+### Estudo do DEE faz projeções para avanço do Covid-19 no RS  
+https://planejamento.rs.gov.br/estudo-do-dee-faz-projecoes-para-avanco-do-covid-19-no-rs 
+
+### Why don’t we know the covid-19 mortality rate?  
+https://www.statschat.org.nz/2020/03/13/why-dont-we-know-the-covid-19-mortality-rate/
+
+###After ‘Flatten the Curve’, we must now ‘Stop the Spread’. Here’s what that means  
+https://thespinoff.co.nz/society/14-03-2020/after-flatten-the-curve-we-must-now-stop-the-spread-heres-what-that-means/  
+https://www.r-bloggers.com/flatten-the-covid-19-curve/
+
+### COVID-19: The Case of Germany  
+https://www.r-bloggers.com/covid-19-the-case-of-germany/
 
 &nbsp;
 
