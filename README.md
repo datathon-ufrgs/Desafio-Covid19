@@ -10,17 +10,25 @@ Informações precisas e de acesso irrestrito à população são essenciais em 
 Tomadas de decisão que vão desde orientações/restrições à população até medidas econômicas devem ser baseadas em critérios claros e objetivos...  
 
 
-* Qual o número de casos em sua área? Como calcular/estimar o número de pessoas infectadas em uma população?
+### Qual o número de casos em sua área? Como calcular/estimar o número de pessoas infectadas em uma população?
+  + Testar todos os indivíduos? Custos e viabilidade.
+  + Como é feito em casos de pandemia? estimar a partir da taxa de mortalidade estimada?
 
-* Qual a taxa de mortalidade do Codiv-19?
+### Qual a taxa de mortalidade do Codiv-19
+  + o denominador é justamente o número de infectados...
+  + Os números de mortes são mais precisos, quanto? Existem informações omitidas? 
 
-* Impactos da política de contenção? ...
+### Impactos da política de contenção
+  + Quais decisoes e em que momento devem ser tomadas? estágios da pandemia
+  + Isolar a população? Por quanto tempo? Qual o tempo esperado de duração de uma pandemia?
+  + O que ocorre no sistema de saúde se grande parte da ppulação busca serviços de saúde ao mesmo tempo?
+  + Quais os impactos econômicos se a pandemia persiste por um longo período?
 
 
 
 
 
-Referências:  
+## Referências:  
 
 
 ### Mapa Global
