@@ -47,6 +47,9 @@ https://www.r-bloggers.com/flatten-the-covid-19-curve/
 ### COVID-19: The Case of Germany  
 https://www.r-bloggers.com/covid-19-the-case-of-germany/
 
+### Top 7 R resources on COVID-19 Coronavirus
+https://www.statsandr.com/blog/top-r-resources-on-covid-19-coronavirus/
+
 &nbsp;
 
 ![](LogoIME.png) ![](LogoDthon.jpg)
