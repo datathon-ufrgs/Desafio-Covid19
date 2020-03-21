@@ -8,6 +8,9 @@ library(scales)
 library(ggplot2)
 library(tidyr)
 library(ggthemes)
+library(stringr)
+library(httr)
+library(jsonlite)
 
 # ------------------------------------
 # Funções 
@@ -32,57 +35,35 @@ RSS <- function(parameters) {
 # ------------------------------------
 # Carrega dados 
 
-N <- 210147125 # população do Brasil
+N <- 11329605 # RS
 
-brazil_historico <- httr::GET('https://api.coronaanalytic.com/history/brazil') %>%
-  .$content %>%
-  rawToChar() %>%
-  jsonlite::fromJSON() %>%
-  tidyr::unnest(history)
+api_link <- 'https://api.coronaanalytic.com/history/brazil'
+call_content <- rawToChar(GET('https://api.coronaanalytic.com/history/brazil/')[["content"]])
 
-brazil <- brazil_historico %>%
-  group_by(date) %>%
-  summarise(cases = sum(cases), suspects = sum(suspects)) %>% 
-  mutate(date = as_date(dmy(date))) %>% 
-  arrange(date) %>% 
-  filter(cases != 0)
+brazil_historico <- fromJSON(call_content) %>% 
+  unnest(history) %>% 
+  separate(name, into = c("uf_name", "uf"), sep = " \\(") %>% 
+  mutate(
+    date = as.Date(date, format = "%d/%m/%Y"),
+    uf = str_remove_all(uf, '\\)')
+  )
 
-brazil_longo <- gather(data = brazil,
-                       key = "status",
-                       value = "casos", -date)
+rs_historico <- brazil_historico %>% 
+  filter(uf == "RS" & cases != 0)
 
-brazil_longo$status <- factor(brazil_longo$status,
-                              labels = c("Confirmados", "Suspeitos"))
-
-Infected <- brazil$cases
+Infected <- rs_historico$cases
 
 Day <- 1:(length(Infected))
 
 df <- data.frame(Day, Infected)
-df$dm <- seq(ymd("2020-02-26"), ymd("2020-02-26") + (length(Day) - 1), by = "days")
+df$dm <- seq(ymd("2020-03-10"), ymd("2020-03-10") + (length(Day) - 1), by = "days")
 
 # ------------------------------------
 # Análise preliminar
 
-p <- ggplot(data = brazil_longo, 
-            mapping = aes(x = date,
-                          y = casos,
-                          colour = status)) +
+p <- ggplot(data = df, mapping = aes(x = dm, y = Infected)) +
   geom_point() + geom_line() +
-  labs(x = "Tempo (dias)", y = "Número de casos", colour = "Status") +
-  theme_bw() +
-  theme(legend.position = "top",
-        axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1))
-p
-
-p + scale_y_log10()
-
-p <- ggplot(data = df,
-            mapping = aes(x = dm, y = Infected)) +
-  geom_point() + geom_line() +
-  labs(x = "Tempo (dias)", y = "Número de casos confirmados") +
-  theme_bw() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1))
+  labs(x = "Tempo (dias)", y = "Número de casos confirmados") + theme_bw()
 p
 
 p + scale_y_log10() + geom_smooth(method = "lm", se = F)
@@ -100,7 +81,7 @@ Opt_par
 
 t <- 1:100 # time in days
 fit <- data.frame(ode(y = init, times = t, func = SIR, parms = Opt_par))
-fit$dia <- seq(ymd("2020-02-26"), ymd("2020-02-26") + (length(t) - 1), by = "days")
+fit$dia <- seq(ymd("2020-03-10"), ymd("2020-03-10") + (length(t) - 1), by = "days")
 
 # ------------------------------------
 # Modelo SIR: quantidades de interesse
@@ -148,7 +129,7 @@ p <- ggplot(data = fitlong,
   theme(legend.position = "top",
         axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1)) +
   scale_colour_manual(values = cbPalette) +
-  ggtitle("Modelo SIR COVID-19 Brasil (a reta pontilhada representa onde estamos agora)")
+  ggtitle("Modelo SIR COVID-19 RS (a reta pontilhada representa onde estamos agora)")
 
 p + annotate("segment",
              x = fit$dia[which.max(fit$I)] + 10,
@@ -164,8 +145,7 @@ p + annotate("segment",
            label = as.character(max(fit$I)))
 
 p2 <- p + scale_y_log10() +
-  geom_point(data = df,
-             mapping = aes(x = dm, y = Infected, colour = NULL))
+  geom_point(data = df, mapping = aes(x = dm, y = Infected, colour = NULL))
 
 p2
 
